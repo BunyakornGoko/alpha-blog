@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :articles
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -15,4 +16,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get 'about', to: 'pages#about'
+
+  get 'signup', to: 'users#new'
+  post 'users', to: 'users#create'
 end
